@@ -1,0 +1,28 @@
+$sidebar-width: 90px;
+
+.sidebar{
+    width: $sidebar-width;
+    margin-left: -$sidebar-width;
+    transition: margin-left .25s;
+    a{
+        font-size: 9px;
+        line-height: 1rem;
+        white-space: nowrap;
+    }
+}
+
+.main{
+    width: 100%;
+}
+
+
+@include media-breakpoint-up(md){
+    .sidebar{
+        width: $sidebar-width;
+        margin-left:0;
+    }
+    
+    .main{
+        width: calc(100vw - #{$sidebar-width});
+    }
+}

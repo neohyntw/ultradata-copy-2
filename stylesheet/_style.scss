@@ -1,0 +1,123 @@
+.banner{
+    background: url('../images/top-banner.webp') no-repeat;
+    background-size: cover;
+    background-position: 50% 40%;
+    height: 400px;
+    position: relative;
+
+    &::after{
+      content: '';
+      position: absolute; /* Overlay to apply blur */
+      top: 0;
+      left: 0;
+      width: 40%; /* Define the blurred portion, 30% of the width */
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)); /* Gradient transition */
+      filter: blur(10px); /* Apply blur to the gradient */
+      z-index: 1;
+    
+    }
+
+    .headline{
+        position: absolute;
+        z-index: 2;
+    }
+}
+
+.quicklink{
+    a{
+        display: block;
+        font-size: 14px;
+        margin: 5px 0;
+    }
+    .title{
+        text-transform: uppercase;
+    }
+}
+
+
+  .scroll-snap {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for iOS */
+    scroll-snap-type: x mandatory; /* Snap horizontally */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    &::-webkit-scrollbar {
+        display: none; /* Hide Webkit-based scrollbars */
+      }
+  }
+
+  .scroll-item {
+    scroll-snap-align: start; /* Snap at the start of each item */
+    padding: 10px; /* Add some padding for spacing */
+    flex: none; /* Ensure each item is individually snap-aligned */
+    
+  }
+
+  .iconbar{
+    margin-left: 120px;
+  }
+
+  .promocard{
+    background: url('../images/promobanner.webp') no-repeat;
+    background-size: cover;
+    background-position: 50% 40%;
+    height: 310px;
+  }
+
+  .carousel-item{
+    .headline{
+        background: rgba(0,0,0,0.4);
+    }
+    height: 310px;
+    &:nth-of-type(1){
+        background: url('../images/carousel-1.webp') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &:nth-of-type(2){
+        background: url('../images/carousel-2.webp') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    &:nth-of-type(3){
+        background: url('../images/carousel-3.webp') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+  }
+
+  
+
+  .main{
+    .carousel-indicators {
+        /* Adjust the size of the indicators */
+        height: 12px;
+        button {
+            width: 8px; /* Width of the indicator */
+            height: 8px; /* Height of the indicator */
+            margin: 0 8px;
+            border-radius: 50%; /* Make it round */
+            background-color: rgba(255, 255, 255, 0.5); /* Default color */
+            .active {
+                background-color: rgba(255, 255, 255, 1); /* Active indicator color */
+              }
+          }
+      }
+  }
+  
+  
+
+
+  @include media-breakpoint-up(md){
+    .navbar-collapse {
+      display: flex;
+      flex-direction: column; /* Align vertically when collapsed */
+    }
+    .navbar-collapse .nav-item {
+      margin-bottom: 10px; /* Space between items */
+    }
+    .iconbar{
+        margin-left: 0px;
+      }
+
+  }
